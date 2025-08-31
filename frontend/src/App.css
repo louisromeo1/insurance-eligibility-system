@@ -1,0 +1,226 @@
+/* App.css - Louis Romeo */
+/* Written for sleek and helpful front-end design */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: #1a3c6c;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #2c5282;
+  margin-bottom: 15px;
+}
+
+.form-section, .result-section, .history-section {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.eligibility-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+input {
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3182ce;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+}
+
+.submit-button, .fetch-button, .toggle-button {
+  padding: 12px 20px;
+  background-color: #3182ce;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.submit-button:hover, .fetch-button:hover, .toggle-button:hover {
+  background-color: #2b6cb0;
+  transform: translateY(-1px);
+}
+
+.submit-button:disabled, .fetch-button:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #3182ce;
+  font-weight: 500;
+  margin: 20px 0;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #e2e8f0;
+  border-top: 3px solid #3182ce;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-alert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fed7d7;
+  color: #9b2c2c;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin: 15px 0;
+  font-size: 0.9rem;
+}
+
+.close-alert {
+  background: none;
+  border: none;
+  color: #9b2c2c;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.result-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.result-card p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #2d3748;
+}
+
+.result-card h3 {
+  font-size: 1.2rem;
+  color: #2c5282;
+  margin: 15px 0 10px;
+}
+
+.details-content {
+  margin-top: 10px;
+  padding-left: 15px;
+  border-left: 3px solid #3182ce;
+}
+
+.history-input {
+  display: flex;
+  gap: 15px;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.history-input label {
+  flex: 1;
+}
+
+.table-container {
+  max-height: 400px;
+  overflow-y: auto;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.history-table th, .history-table td {
+  padding: 12px;
+  text-align: left;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.history-table th {
+  background-color: #edf2f7;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.history-table tr:nth-child(even) {
+  background-color: #f7fafc;
+}
+
+.history-table tr:hover {
+  background-color: #e6f0fa;
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .history-table {
+    font-size: 0.8rem;
+  }
+
+  .history-table th, .history-table td {
+    padding: 8px;
+  }
+}
